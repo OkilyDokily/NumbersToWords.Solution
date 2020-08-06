@@ -15,7 +15,7 @@ namespace NumbersToWords.Models
 
         string str = "two hundred fourty two";
 
-        public List<int[]> makeListOfThreeElementArrays(List<int> list){
+        public List<int[]> MakeListOfThreeElementArrays(List<int> list){
             List<int[]> newList = new List<int[]>();
             while(true)
             {
@@ -24,12 +24,20 @@ namespace NumbersToWords.Models
                 if(list.Count < 3) break;
                 list.RemoveRange(0,3);
             }
-            foreach(int[] i in newList){
-                Console.WriteLine(i.GetType());
-                Console.WriteLine(string.Join("",i));
-            }
-            
+         
             return newList;
+        }
+
+        public string ConvertArrayToWords(int[] arr){
+            string rs = "";
+            rs = ones[arr[0]];
+            if(arr.Length > 1){
+                rs = tens[arr[1]] + " " + rs;
+            }
+            if(arr.Length > 2){
+                rs = (ones[arr[2]] + " hundred") + " " + rs;
+            }
+            return rs;
         }
     }
 }

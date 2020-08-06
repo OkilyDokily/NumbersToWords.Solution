@@ -2,6 +2,11 @@ convert number to string.
 convert string to array.
 reverse the array
 convert the array to a List
+
+create new list with 3 element arrays
+	
+iterate over a 3 element array
+	
 	
 
 
