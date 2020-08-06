@@ -1,0 +1,9 @@
+convert number to string.
+convert string to array.
+reverse the array
+convert the array to a List
+	
+
+
+
+
