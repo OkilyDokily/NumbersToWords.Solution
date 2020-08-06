@@ -19,7 +19,8 @@ _Converts a user inputted number to a word string_
 | convert list to 3 element arrays | 3,4,5,5,6,7,9 | [3,4,5][5,6,7][9] |
 | convert 3 element array to word | 1,2,3 | three hundred twenty one |
 | convert 3 element array to word including teens | 1,1,4 | four hundred eleven |
-| convert list of arrays to string | [3,4,5][5,6,7][9] | nine million 7 hundred sixty five thousand three hundred fourty five |
+| convert list of arrays to string | [3,4,5][5,6,7][9] | nine million seven hundred sixty five thousand three hundred fourty five |
+| create method that converts number to string using previous methods | 9765543 | nine million seven hundred sixty.... |
 
 ## Known Bugs
 
