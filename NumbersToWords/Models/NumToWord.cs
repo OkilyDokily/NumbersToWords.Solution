@@ -5,8 +5,8 @@ namespace NumbersToWords.Models
 {
     public class NumToWord
     {
-         public static Dictionary<int,string> ones = new Dictionary<int, string>{{1,"one"},{2,"two"},{3,"three"},{4,"four"},{5,"five"},{6,"six"},{7,"seven"},{8,"eight"},{9,"nine"}};
-        public static Dictionary<int,string> tens = new Dictionary<int,string>{{1,"ten"},{2,"twenty"},{3,"thirty"},{4,"fourty"},{5,"fifty"},{6,"sixty"},{7,"seventy"},{8,"eighty"},{9,"ninety"}};
+         public static Dictionary<int,string> ones = new Dictionary<int, string>{{0,""},{1,"one"},{2,"two"},{3,"three"},{4,"four"},{5,"five"},{6,"six"},{7,"seven"},{8,"eight"},{9,"nine"}};
+        public static Dictionary<int,string> tens = new Dictionary<int,string>{{0,""},{1,"ten"},{2,"twenty"},{3,"thirty"},{4,"fourty"},{5,"fifty"},{6,"sixty"},{7,"seventy"},{8,"eighty"},{9,"ninety"}};
 
         public static Dictionary<int,string> t = new Dictionary<int, string>{{11,"eleven"},{12,"twelve"},{13,"thirteen"},{14,"fourteen"},{15,"fifteen"},{16,"sixteen"},{17,"seventeen"},{18,"eighteen"},{19,"nineteen"}};
         public static Dictionary<int,string> p = new Dictionary<int,string>{{4,"thousand"},{7,"million"},{10,"billion"},{13,"trillion"}};
@@ -33,6 +33,10 @@ namespace NumbersToWords.Models
             rs = ones[arr[0]];
             if(arr.Length > 1){
                 rs = tens[arr[1]] + " " + rs;
+                if(arr[1] == 1 && arr[0] != 0){
+                    string teens = arr[1].ToString() + arr[0].ToString();
+                    rs = t[int.Parse(teens)];
+                }
             }
             if(arr.Length > 2){
                 rs = (ones[arr[2]] + " hundred") + " " + rs;

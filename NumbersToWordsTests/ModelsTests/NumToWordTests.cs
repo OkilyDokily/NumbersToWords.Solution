@@ -29,7 +29,18 @@ namespace NumbersToWordsTests.ModelsTests
             NumToWord ntw = new NumToWord();
             string ar = ntw.ConvertArrayToWords(aa);
             Assert.AreEqual(er,ar);
-        }   
+        }
+
+            [TestMethod]
+        public void ConvertArrayToWords_ConvertedArrayWithTeens_True(){
+            //arrange
+            int[] aa = new int[] {1,1,8};
+            string er = "eight hundred eleven";
+            //act
+            NumToWord ntw = new NumToWord();
+            string ar = ntw.ConvertArrayToWords(aa);
+            Assert.AreEqual(er,ar);
+        }      
     }
 
 }
