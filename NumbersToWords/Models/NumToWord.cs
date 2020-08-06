@@ -9,7 +9,7 @@ namespace NumbersToWords.Models
         public static Dictionary<int,string> tens = new Dictionary<int,string>{{0,""},{1,"ten"},{2,"twenty"},{3,"thirty"},{4,"fourty"},{5,"fifty"},{6,"sixty"},{7,"seventy"},{8,"eighty"},{9,"ninety"}};
 
         public static Dictionary<int,string> t = new Dictionary<int, string>{{11,"eleven"},{12,"twelve"},{13,"thirteen"},{14,"fourteen"},{15,"fifteen"},{16,"sixteen"},{17,"seventeen"},{18,"eighteen"},{19,"nineteen"}};
-        public static Dictionary<int,string> p = new Dictionary<int,string>{{4,"thousand"},{7,"million"},{10,"billion"},{13,"trillion"}};
+        public static string[] p = new string[]{"","thousand","million","billion","trillion"};
 
         int number = 123443242;
 
@@ -42,6 +42,16 @@ namespace NumbersToWords.Models
                 rs = (ones[arr[2]] + " hundred") + " " + rs;
             }
             return rs;
+        }
+
+        public string ConvertListOfArraysToString(List<int[]> list){
+            string ns = "";
+            for(int i = 0; i < list.Count; i++){
+                string temp =  ConvertArrayToWords(list[i]) + " " + p[i];
+                ns = temp + " " + ns;
+            }
+            Console.WriteLine(ns);
+            return ns.Trim();
         }
     }
 }

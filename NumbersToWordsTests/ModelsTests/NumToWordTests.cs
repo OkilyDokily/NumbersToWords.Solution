@@ -31,7 +31,7 @@ namespace NumbersToWordsTests.ModelsTests
             Assert.AreEqual(er,ar);
         }
 
-            [TestMethod]
+        [TestMethod]
         public void ConvertArrayToWords_ConvertedArrayWithTeens_True(){
             //arrange
             int[] aa = new int[] {1,1,8};
@@ -40,7 +40,18 @@ namespace NumbersToWordsTests.ModelsTests
             NumToWord ntw = new NumToWord();
             string ar = ntw.ConvertArrayToWords(aa);
             Assert.AreEqual(er,ar);
-        }      
+        }
+        [TestMethod]
+        public void ConvertListOfArraysToString_True(){
+            //arrange
+            List<int[]> al = new List<int[]>{new int[]{3,7,8},new int[]{4,6,4},new int[]{6}};
+            string er = "six million four hundred sixty four thousand eight hundred seventy three";
+            //act
+            NumToWord ntw = new NumToWord();
+            string ar = ntw.ConvertListOfArraysToString(al);
+
+            Assert.AreEqual(er,ar);
+        }         
     }
 
 }
