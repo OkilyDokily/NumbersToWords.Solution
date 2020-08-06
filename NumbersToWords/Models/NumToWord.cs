@@ -53,5 +53,7 @@ namespace NumbersToWords.Models
             Console.WriteLine(ns);
             return ns.Trim();
         }
+
+        public string Convert()
     }
 }
