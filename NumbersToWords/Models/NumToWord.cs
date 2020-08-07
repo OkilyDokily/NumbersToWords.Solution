@@ -54,6 +54,13 @@ namespace NumbersToWords.Models
             return ns.Trim();
         }
 
-        public string Convert()
+        public string Convert(int num){
+            string iS = num.ToString();
+            char[] ca = iS.ToCharArray().Reverse().ToArray();
+            List<int> ia = ca.Select(p=>int.Parse(p.ToString())).ToList();
+            List<int[]> la = MakeListOfThreeElementArrays(ia);  
+            string str = ConvertListOfArraysToString(la);
+            return str;
+        }
     }
 }

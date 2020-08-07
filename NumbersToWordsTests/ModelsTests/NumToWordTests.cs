@@ -42,7 +42,7 @@ namespace NumbersToWordsTests.ModelsTests
             Assert.AreEqual(er,ar);
         }
         [TestMethod]
-        public void ConvertListOfArraysToString_True(){
+        public void ConvertListOfArraysToString_CreateFinalOutput_True(){
             //arrange
             List<int[]> al = new List<int[]>{new int[]{3,7,8},new int[]{4,6,4},new int[]{6}};
             string er = "six million four hundred sixty four thousand eight hundred seventy three";
@@ -51,7 +51,18 @@ namespace NumbersToWordsTests.ModelsTests
             string ar = ntw.ConvertListOfArraysToString(al);
 
             Assert.AreEqual(er,ar);
-        }         
+        }
+         [TestMethod]
+         public void Convert_TestIntegrationMethod_True(){
+            //arrange
+            int num = 53423524; 
+            string er = "fifty three million four hundred twenty three thousand five hundred twenty four";
+            //act
+            NumToWord ntw = new NumToWord();
+            string ar = ntw.Convert(num);
+
+            Assert.AreEqual(er,ar);
+        }            
     }
 
 }
