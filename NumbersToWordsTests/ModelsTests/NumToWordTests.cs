@@ -62,7 +62,30 @@ namespace NumbersToWordsTests.ModelsTests
             string ar = ntw.Convert(num);
 
             Assert.AreEqual(er,ar);
-        }            
+        }
+         [TestMethod]
+         public void Convert_TestIntegrationMethod_True2(){
+            //arrange
+            int num = 50423524; 
+            string er = "fifty million four hundred twenty three thousand five hundred twenty four";
+            //act
+            NumToWord ntw = new NumToWord();
+            string ar = ntw.Convert(num);
+
+            Assert.AreEqual(er,ar);
+        }
+
+         [TestMethod]
+         public void Convert_TestIntegrationMethod_True3(){
+            //arrange
+            int num = 554; 
+            string er = "five hundred fifty four";
+            //act
+            NumToWord ntw = new NumToWord();
+            string ar = ntw.Convert(num);
+
+            Assert.AreEqual(er,ar);
+        }                  
     }
 
 }

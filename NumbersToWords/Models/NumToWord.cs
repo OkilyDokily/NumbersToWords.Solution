@@ -11,10 +11,6 @@ namespace NumbersToWords.Models
         public static Dictionary<int,string> t = new Dictionary<int, string>{{11,"eleven"},{12,"twelve"},{13,"thirteen"},{14,"fourteen"},{15,"fifteen"},{16,"sixteen"},{17,"seventeen"},{18,"eighteen"},{19,"nineteen"}};
         public static string[] p = new string[]{"","thousand","million","billion","trillion"};
 
-        int number = 123443242;
-
-        string str = "two hundred fourty two";
-
         public List<int[]> MakeListOfThreeElementArrays(List<int> list){
             List<int[]> newList = new List<int[]>();
             while(true)
@@ -23,8 +19,8 @@ namespace NumbersToWords.Models
                 newList.Add(item);
                 if(list.Count < 3) break;
                 list.RemoveRange(0,3);
-            }
-         
+                if(list.Count == 0) break;
+            } 
             return newList;
         }
 
@@ -32,7 +28,8 @@ namespace NumbersToWords.Models
             string rs = "";
             rs = ones[arr[0]];
             if(arr.Length > 1){
-                rs = tens[arr[1]] + " " + rs;
+                //ternary expression in case a number place value is zero
+                rs = tens[arr[1]] + ((arr[0]!=0) ? " " : "") + rs;
                 if(arr[1] == 1 && arr[0] != 0){
                     string teens = arr[1].ToString() + arr[0].ToString();
                     rs = t[int.Parse(teens)];
