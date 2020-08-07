@@ -36,7 +36,8 @@ namespace NumbersToWords.Models
                 }
             }
             if(arr.Length > 2){
-                rs = (ones[arr[2]] + " hundred") + " " + rs;
+                 //ternary expression in case a number place value is zero
+                rs = (ones[arr[2]] + " hundred") + ((arr[1]!=0) ? " " : "") + rs;
             }
             return rs;
         }
